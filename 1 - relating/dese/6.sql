@@ -1,5 +1,4 @@
-SELECT "name" FROM "schools"
-WHERE "id" = (
-    SELECT "school_id" FROM "graduation_rates"
-    WHERE "graduated" = 100
-);
+SELECT name FROM schools
+JOIN graduation_rates ON graduation_rates.school_id == schools.id
+WHERE graduation_rates.graduated == 100;
+
